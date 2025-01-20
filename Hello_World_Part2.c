@@ -34,7 +34,7 @@ int main(){
     //or use sizeof(), which returns the amount of storage the array has used
     printf("%d bytes\n", sizeof(prices));
 
-    // Dividint the storage space used by the array by the storage space used by one element,
+    // Dividing the storage space used by the array by the storage space used by one element,
     // it is possible to automate finding the array size!!
     for(int price = 0; price < sizeof(prices)/sizeof(prices[0]); price++){
         printf("$%.2lf\n", prices[price]);
@@ -76,6 +76,8 @@ int main(){
     printf("%s, score: %d\n", player1.name, player1.score);
     printf("%s, score: %d\n", player2.name, player2.score);
 
+
+
     //typedef = reserved keyword that gives an existing datatype a "nickname"
     // line 8 for reference
 
@@ -87,6 +89,8 @@ int main(){
 
     User user3 = {"Samuel", 123456};
     User user4 = {"Alex", 654321};
+
+
 
     //Enums: line 15
     // enum = a user defined type of named integer identifies helps to make a program more readable
@@ -152,13 +156,13 @@ int main(){
 
     printf("value of age: %d\n", age);
     printf("value stored at address pAge: %d\n", *pAge);
-
-
     
 
     // pointers can also be intialized without being declared
     int *pAge2 = NULL;
     pAge2 = &age;
+    
+
     
     /*
         Bitwise operations: special operations used in bit level programming
