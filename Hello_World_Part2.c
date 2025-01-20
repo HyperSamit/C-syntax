@@ -142,14 +142,19 @@ int main(){
     int *pAge = &age;
     // translated to english:
     // "integer(int) pointer(*) named 'pAge' is equal to (=) the address of (&) 'age'"
+    printf("address of age: %p\n", &age); // %p indicates the variable is a pointer, and the &a is the Address (&) of a
+    printf("value of pAge: %d\n", pAge);
+
     int value_age = *pAge;
     // translated = "integer named 'y' = the thing pointed to(*) by 'pAge'"
-
     // if the * is not next to a datatype, then the * is called a dereference
     // dereference: go to the address in the pointer and grab that value
 
-    printf("address of age: %p\n", &age); // %p indicates the variable is a pointer, and the &a is the Address (&) of a
     printf("value of age: %d\n", age);
+    printf("value stored at address pAge: %d\n", *pAge);
+
+
+    
 
     // pointers can also be intialized without being declared
     int *pAge2 = NULL;
@@ -198,7 +203,7 @@ int main(){
     //   00001100
     // = 00000011 = 3
     printf("Right Shift: %d\n", z);
-    
+
     
 
     return 0;
