@@ -138,6 +138,8 @@ int main(){
 
     int age1;
     char name1[25]; // bytes
+    char *string = "Samit"; //called a string literal
+    // basically uses * symbol to set the value of 'string' to mean a character, think of it as typedef(covered later)
 
     printf("whats you name?\n");
     scanf("%s", &name1); //if no white space is included (space)
