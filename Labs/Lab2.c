@@ -44,9 +44,6 @@ void strconcat2(char *destination, char *source){
 
 // Question 3
 int strcomp(char *str1, char *str2){
-    printf("value of str1: %d\n", &str1);
-    printf("value of str2: %d\n", &str2);
-    char c = *str1;
     int asciivalue = (int)*str1;
     printf("value of str1: %d\n", asciivalue);
     while(*str1 & *str2){
@@ -62,6 +59,16 @@ int strcomp(char *str1, char *str2){
         }
     }
     return 0;
+}
+
+int my_atoi(char *str){
+    int num = 0;
+    while(*str){
+        num *= 10;
+        num += (*str - '0') ;
+        str++;
+    }
+    return num;
 }
 
 int main(){
@@ -87,6 +94,9 @@ int main(){
     char str1[] = "abcd";
     char str2[] = "abCd";
     printf("strcomp = %d\n", strcomp(str1, str2));
+
+    // Question 5
+    printf("atoi = %d\n", my_atoi("1234"));
 
     return 0;
 }
