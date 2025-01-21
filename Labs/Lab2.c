@@ -18,11 +18,9 @@ void strconcat(char *destination, const char *source){
     int i = 0;
     int str1len = 0;
 
-    while(destination[i] != '\0'){
+    while(destination[str1len] != '\0'){
         str1len++;
-        i++;
     }
-    i = 0;
     while(source[i] != '\0'){
         destination[i + str1len] = source[i];
         i++;
@@ -44,6 +42,28 @@ void strconcat2(char *destination, char *source){
     
 }
 
+// Question 3
+int strcomp(char *str1, char *str2){
+    printf("value of str1: %d\n", &str1);
+    printf("value of str2: %d\n", &str2);
+    char c = *str1;
+    int asciivalue = (int)*str1;
+    printf("value of str1: %d\n", asciivalue);
+    while(*str1 & *str2){
+        if((int)*str1 == (int)*str2){
+            str1++;
+            str2++;
+        }
+        else if((int)*str1 > (int)*str2){
+            return 1;
+        }
+        else{
+            return -1;
+        }
+    }
+    return 0;
+}
+
 int main(){
 
     int num_block[] = {5, 6, 7, 8};
@@ -54,7 +74,7 @@ int main(){
 
     //Question 2
     char string1[] = "Samit";
-    char string2[] = " Chenchu";
+    char string2[] = "Chenchu";
     strconcat(string1, string2);
     printf("%s\n", string1);
 
@@ -62,6 +82,11 @@ int main(){
     char string4[] = " Kuppam";
     strconcat2(string3, string4);
     printf("%s\n", string3);
+
+    // Question 3
+    char str1[] = "abcd";
+    char str2[] = "abCd";
+    printf("strcomp = %d\n", strcomp(str1, str2));
 
     return 0;
 }
