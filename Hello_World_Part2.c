@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 struct Player{
     char name[25];
@@ -208,7 +209,44 @@ int main(){
     // = 00000011 = 3
     printf("Right Shift: %d\n", z);
 
+
+
+    // Malloc (Dynamic Memory Allocation) *needs <stdlib.h>*
+    // Allocates memory without knowing the data that will be stored in the block
+    // syntax:
+    //         int *ptr = (cast_type* )malloc(byte_size)
+    //                      any type          
+    // Example:
+    int integer, number;
+    printf("Enter number of elements: ");
+    scanf("%d", &number);
+    printf("Entered....\n");
+
+    int *ptr = (int* ) malloc (number * sizeof(int));
     
+    if (ptr == NULL){
+        printf("Memory was not allocated!\n");
+    }
+    else{
+        // Memory has been successfully allocated
+        printf("Memory successfully allocated using malloc.\n");
+
+        // Get the elements of the array
+        for (integer = 0; integer < number; ++integer) {
+            ptr[integer] = integer + 1;
+        }
+
+        // Print the elements of the array
+        printf("The elements of the array are: ");
+        for (integer = 0; integer < number; ++integer) {
+            printf("%d, ", ptr[integer]);
+        }
+    }
+    // ALWAYS FREE UP MEMORY ONCE YOU'RE DONE
+    free(ptr);
+    ptr = NULL;
+
+
 
     return 0;
 
