@@ -13,7 +13,7 @@ void create_list_from_data(IntList **p_IntList, int *data_arr, int size_arr){
     return;
 }
 
-void list_append(IntList *list, int new_elem){
+void list_append_1(IntList *list, int new_elem){
     if (list->size == list->capacity){
         list->capacity *= 2;
         list->data = realloc(list->data, sizeof(int) * list->capacity);
@@ -23,7 +23,7 @@ void list_append(IntList *list, int new_elem){
     return;
 }
 
-void list_insert(IntList *list, int new_elem, int index){
+void list_insert_1(IntList *list, int new_elem, int index){
     if (list->size == list->capacity){
         list->capacity *= 2;
         list->data = realloc(list->data, sizeof(int) * list->capacity);
@@ -36,7 +36,7 @@ void list_insert(IntList *list, int new_elem, int index){
     return;
 }
 
-void list_delete(IntList *list, int index){
+void list_delete_1(IntList *list, int index){
     for (int i = index; i < list->size - 1; i++){
         list->data[i] = list->data[i + 1];
     }
@@ -65,19 +65,19 @@ int main() {
     }
     printf("\n");
 
-    list_append(list, 6);
+    list_append_2(list, 6);
     for(int i = 0; i < list->size; i++){
         printf("%d, ", list->data[i]);
     }
     printf("\n");
 
-    list_insert(list, 7, 2);
+    list_insert_2(list, 7, 2);
     for(int i = 0; i < list->size; i++){
         printf("%d, ", list->data[i]);
     }
     printf("\n");
 
-    list_delete(list, 3);
+    list_delete_2(list, 3);
     for (int i = 0; i < list->size; i++){
         printf("%d, ", list_get(list, i));
     }
